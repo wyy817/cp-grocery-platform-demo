@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import datetime
+import os
 from typing import Any
 
 from fastapi import FastAPI, Depends, HTTPException, status
@@ -28,14 +29,15 @@ app.add_middleware(
 # ---------------------------------------------------------------------------
 # Auth constants
 # ---------------------------------------------------------------------------
-JWT_SECRET = "cp-group-secret-2026"
+# Set JWT_SECRET in the environment for any real deployment; the fallback is for local demos only.
+JWT_SECRET = os.environ.get("JWT_SECRET", "dev-only-secret-change-me")
 JWT_ALGORITHM = "HS256"
 JWT_EXPIRE_HOURS = 24
 
 pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
 oauth2_scheme = OAuth2PasswordBearer(tokenUrl="/api/v1/auth/login", auto_error=False)
 
-# Hardcoded users  {username: (hashed_password, role)}
+# Demo accounts  {username: (hashed_password, role)} - for local demonstration only
 _USERS: dict[str, tuple[str, str]] = {
     "admin": (pwd_context.hash("admin123"), "ADMIN"),
     "analyst": (pwd_context.hash("analyst123"), "ANALYST"),
