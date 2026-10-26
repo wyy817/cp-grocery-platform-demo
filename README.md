@@ -5,7 +5,7 @@ A full-stack demo platform for a fresh-food e-commerce market-entry case study o
 - **Strategy Dashboard** (login required): competitor analysis, market opportunities, market growth trends, customer personas and inventory, for strategy analysts and managers.
 - **Consumer App** (public, English UI): product catalogue, farm-to-shelf traceability lookup and a simple cart / checkout flow.
 
-Data comes from one curated spreadsheet (`backend/CP_Glide_Data_Master.xlsx`: competitors, products, traceability, market data, opportunities, personas). It was built as a demo, so this is a prototype rather than a production system.
+Data comes from one curated spreadsheet (`backend/CP_Glide_Data_Master.xlsx`: competitors, products, traceability, market data, opportunities, personas). It was built as a demo, so this is a prototype rather than a production system. An earlier Streamlit version of the same case study is in [Prototype_Design](https://github.com/wyy817/Prototype_Design).
 
 ## Tech stack
 
